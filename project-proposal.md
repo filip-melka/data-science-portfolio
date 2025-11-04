@@ -1,60 +1,74 @@
 # Project Proposals
 
-## The Effect of Weather Temperature on Marathon Pace
+## 🏃‍♂️ Project 1: How Weather Affects Marathon Pace
 
-### 1. Project Overview
+### Overview
 
-This project aims to analyze the relationship between **weather temperature** and **marathon running performance** using **linear regression**. The core hypothesis is that **warmer temperatures lead to slower average marathon paces**. By combining race result data with corresponding weather information, this project will quantify how environmental conditions affect endurance performance.
+This project looks at how **temperature impacts marathon running pace** using **linear regression**. The idea is simple: **hotter weather makes runners slower**. I’ll combine marathon race results with weather data from the same days to see how much temperature affects performance.
 
-### 2. Background and Motivation
+### Why This Project
 
-Recent studies suggest that climate change is already influencing the outcomes of endurance events. According to a BBC Sport article (“_Climate change impacting marathon records_,” 28 Oct 2025), research by Climate Central found that rising global temperatures are making it increasingly difficult for runners to achieve record-breaking performances. The study predicts that by **2045**, nearly **86% of marathons worldwide** will no longer experience optimal running conditions — approximately **4°C for men** and **10°C for women**.
+Recent research (BBC Sport, 2025) shows that climate change is already making it harder to break marathon records. As global temperatures rise, fewer races take place in ideal running conditions — around 4°C for men and 10°C for women.
 
-### 3. Research Question and Hypothesis
+### Approach
 
-**Research Question:**
-How does ambient temperature on race day affect marathon finish pace?
+1. **Collect data** on marathon finish times from public sources (Boston, London, Berlin, etc.).
+2. **Scrape weather info** — temperature, humidity, and wind speed — using APIs like Open-Meteo or NOAA.
+3. **Combine both datasets** based on race date and location.
+4. **Run a linear regression** to see how pace changes with temperature.
+5. **Visualize** the relationship with scatter plots and trend lines.
 
-**Hypothesis:**
-As temperature increases, average marathon pace becomes slower.
+### What I Expect
 
-### 4. Methodology
+I expect to see a clear trend: as temperatures go up, runners’ paces get slower.
 
-1. **Data Collection**
+### Tools
 
-   - Use publicly available datasets of marathon finish times (e.g., from major marathons such as Boston, London, Berlin).
-   - Scrape or obtain corresponding **weather data** (temperature, humidity, wind speed) for each event date and location using APIs like _Open-Meteo_ or _NOAA_ archives.
-   - Merge datasets based on date and race location.
+- Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn)
+- Jupyter Notebook
+- Weather APIs (Open-Meteo, NOAA, Meteostat)
 
-2. **Data Processing**
+---
 
-   - Convert finish times into pace (minutes per kilometer).
-   - Clean and standardize weather measurements.
-   - Remove outliers (e.g., incomplete races, extreme conditions).
+## 💹 Project 2: Predicting Stock Movements with Random Forest
 
-3. **Analysis**
+### Overview
 
-   - Apply **simple linear regression** (pace vs. temperature).
-   - Optionally extend to **multiple regression** to control for other variables (e.g., humidity, elevation, gender, year).
-   - Visualize the relationship using scatter plots with regression lines.
+This project predicts whether a stock’s price will **go up or down** the next day using a **Random Forest Classifier**.
 
-4. **Evaluation**
+### Idea
 
-   - Assess the model fit.
+Use daily stock data from the **Alpaca API** to train a model that predicts the next day’s direction — up or down — based on recent price trends.
 
-### 5. Expected Results
+### Steps
 
-It is expected that the regression will show a **positive correlation** between temperature and marathon pace — meaning higher temperatures lead to slower running speeds.
+1. **Collect stock data** (Open, High, Low, Close, Volume) for companies like AAPL, MSFT, or TSLA.
+2. **Create features** such as:
 
-### 6. Tools and Technologies
+   - Daily returns
+   - Short-term moving averages (3, 7, 14 days)
+   - Volume changes
 
-- **Python** (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn)
-- **Jupyter Notebook**
-- **Data Sources:**
+3. **Label** each day as “Up” (if tomorrow’s price is higher) or “Down.”
+4. **Train and test** a Random Forest model.
+5. **Check accuracy** and see which features are most important.
+6. **Visualize** predictions vs. real outcomes.
 
-  - Public marathon results databases
-  - Weather data APIs (Open-Meteo, NOAA, Meteostat)
+### Expected Outcome
 
-### 7. Significance
+- A model that predicts daily stock direction (Up/Down).
+- Charts showing how well the model performs.
+- Insights into which metrics matter most (returns, moving averages, etc.).
 
-This study combines **sports science** and **data analytics** to explore a real-world impact of **climate change on athletic performance**. By identifying how temperature affects race outcomes, the findings could inform race scheduling, athlete preparation, and environmental adaptation strategies for endurance events.
+### Tools
+
+- Python
+- scikit-learn (Random Forest)
+- pandas / NumPy (data manipulation)
+- matplotlib / seaborn (visualization)
+- Alpaca API (data source)
+
+### Deliverables
+
+- Jupyter Notebook with code, results, and charts
+- Short summary explaining findings and model performance
