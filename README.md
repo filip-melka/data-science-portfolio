@@ -9,4 +9,12 @@ An interactive word association game built with Data Science and NLP concepts. I
 
 https://github.com/user-attachments/assets/148cddd6-7b5c-46e6-a11f-c046197dce0f
 
-**Keywords:** `NLP` · `Word Embeddings` · `Cosine Similarity` · `Word2Vec` · `Data Science` · `Machine Learning` · `Next.js` · `Tailwind CSS`
+## Project 2: Does Colder Weather Improve Marathon Performance?
+
+- `notebooks/marathon-pace.ipynb`
+
+This project investigates the relationship between **race-day weather** and **marathon performance** using Boston Marathon results from 1997–2016. It examines how **temperature and precipitation** affect average running pace by gender and explores participation trends over time.
+
+## Project 3: Will the Price Go Up Or Down?
+
+This project explores **predicting the daily movement of Apple Inc. (AAPL) stock** using historical price data. Features include past prices, returns, moving averages, and previous day information. A **Random Forest classifier** is trained to predict whether the stock will go **up or down** the next day.
