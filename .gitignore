@@ -10,3 +10,6 @@ wheels/
 .venv
 
 .env
+
+trader_logs.txt
+trader_cron.log
