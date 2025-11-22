@@ -64,11 +64,6 @@ X_today = df.iloc[-1:][[
 prediction = model.predict(X_today)[0]  # 1=up, 0=down
 QTY = 1
 
-# --- NEW: check current position ---
-positions = trading_client.get_all_positions()
-aapl_position = next((p for p in positions if p.symbol == "AAPL"), None)
-current_qty = int(aapl_position.qty) if aapl_position else 0
-
 # 4) Trading logic
 if prediction == 1:
     # BUY signal
@@ -81,22 +76,16 @@ if prediction == 1:
         side=side,
         time_in_force=TimeInForce.DAY
     )
-    response = trading_client.submit_order(order)
-    print(response)
+    trading_client.submit_order(order)
 
 else:
-    # SELL signal — only if you hold shares
-    if current_qty >= QTY:
-        log_message(f"Selling {QTY} share(s) (Current holdings: {current_qty})")
-        side = OrderSide.SELL
+    log_message(f"Selling {QTY} share(s)")
+    side = OrderSide.SELL
 
-        order = MarketOrderRequest(
-            symbol="AAPL",
-            qty=QTY,
-            side=side,
-            time_in_force=TimeInForce.DAY
-        )
-        response = trading_client.submit_order(order)
-        print(response)
-    else:
-        log_message(f"Sell signal detected, but you own 0 shares — skipping sell order.")
+    order = MarketOrderRequest(
+        symbol="AAPL",
+        qty=QTY,
+        side=side,
+        time_in_force=TimeInForce.DAY
+    )
+    trading_client.submit_order(order)

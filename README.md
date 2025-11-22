@@ -17,4 +17,10 @@ This project investigates the relationship between **race-day weather** and **ma
 
 ## Project 3: Will the Price Go Up Or Down?
 
+- `notebooks/stock-trading.ipynb`
+
 This project explores **predicting the daily movement of Apple Inc. (AAPL) stock** using historical price data. Features include past prices, returns, moving averages, and previous day information. A **Random Forest classifier** is trained to predict whether the stock will go **up or down** the next day.
+
+To test my Random Forest classifier, I am using Alpaca Paper Trading.
+
+- 👉 **You can check the value of my portfolio [here](https://how-rich-is-filip.vercel.app/)**
